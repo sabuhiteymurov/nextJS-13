@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './Notes.module.css';
+import CreateNote from './CreateNote';
 
 const getNotes = async () => {
   const res = await fetch(
@@ -23,6 +24,8 @@ export default async function NotesPage() {
           return <Note key={note.id} note={note} />;
         })}
       </div>
+
+      <CreateNote />
     </div>
   );
 }
